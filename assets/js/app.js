@@ -13,6 +13,7 @@ $(document).ready(function() {
       return false;
     }
   });
+
   $('#rec').on('click', function(event) {
     switchRecognition();
   });
