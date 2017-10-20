@@ -4,8 +4,8 @@
 
 html,
 body {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
   -webkit-overflow-scrolling: auto;
 }
@@ -15,9 +15,6 @@ html {
   --font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial,
     sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-
-  width: 100%;
-  height: 100%;
 }
 
 body {
@@ -28,8 +25,6 @@ body {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  width: 100%;
-  height: 100%;
   line-height: 1.5;
   font-family: var(--font-stack);
 }
@@ -135,8 +130,8 @@ button:focus {
   flex: 1 1 auto;
   display: flex;
   flex-direction: column-reverse;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: #f1f1f1;
   overflow-x: hidden;
   overflow-y: auto;
