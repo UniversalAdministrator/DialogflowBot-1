@@ -61,7 +61,7 @@ function send() {
   }
 }
 function setResponse(val) {
-  let json = JSON.parse(val);
+  var json = JSON.parse(val);
   console.log(json);
 
   if (json.result.fulfillment.speech) {
