@@ -4,6 +4,7 @@ $(document).ready(function() {
   $('form').on('submit', function(e) {
     alert('submit');
     e.preventDefault();
+    return false;
   });
   $('#input').on('keypress', function(event) {
     alert(event.which);
@@ -11,6 +12,7 @@ $(document).ready(function() {
     if (event.which == 13 || event.keyCode == 13) {
       event.preventDefault();
       send();
+      return false;
     }
   });
   $('#rec').on('click', function(event) {
