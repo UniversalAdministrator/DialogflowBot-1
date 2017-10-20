@@ -7,8 +7,6 @@ $(document).ready(function() {
     return false;
   });
   $('#input').on('keypress', function(event) {
-    alert(event.which);
-    alert(event.keyCode);
     if (event.which == 13 || event.keyCode == 13) {
       event.preventDefault();
       send();
