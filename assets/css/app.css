@@ -55,6 +55,47 @@ button {
   border-radius: 20px;
 }
 
+button:focus {
+  outline: 0;
+}
+
+.flag {
+  display: table;
+  width: 100%;
+}
+
+.flag__image,
+.flag__body {
+  display: table-cell;
+  vertical-align: middle;
+}
+.flag--top .flag__image,
+.flag--top .flag__body {
+  vertical-align: top;
+}
+.flag--bottom .flag__image,
+.flag--bottom .flag__body {
+  vertical-align: bottom;
+}
+
+.flag__image {
+  padding-top: 8px;
+  padding-right: 10px;
+}
+.flag__image > img {
+  display: block;
+  max-width: none;
+  border-radius: 50%;
+}
+.flag--rev .flag__image {
+  padding-right: 0;
+  padding-left: 10px;
+}
+
+.flag__body {
+  width: 100%;
+}
+
 .chat {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -93,7 +134,8 @@ button {
   text-align: left;
 }
 .response-bot p {
-  background-color: white;
+  background-color: #0e3e26;
+  color: #fff;
 }
 
 .response-buttons {

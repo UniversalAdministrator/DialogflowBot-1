@@ -12,6 +12,9 @@ $(document).ready(function() {
   });
 
   $(document).on('click', 'button', function(e) {
+    $(this)
+      .closest('.response-buttons')
+      .slideUp();
     $('#input').val(this.innerText);
     send();
   });
@@ -22,6 +25,10 @@ function send() {
   $('.chat').append(
     '<div class="response response-user"><p>' + text + '</p></div>'
   );
+  $('.response-bot')
+    .last()
+    .find('.response-buttons')
+    .slideUp();
   $('#input').val('');
   $.ajax({
     type: 'POST',
@@ -47,11 +54,22 @@ function send() {
 }
 function setResponse(val) {
   let json = JSON.parse(val);
+  console.log(json);
 
   if (json.result.fulfillment.speech) {
     var html = '';
     html += '<div class="response response-bot">';
-    html += '<p>' + json.result.fulfillment.speech + '</p>';
+    html +=
+      '<div class="flag flag--top">' +
+      '<div class="flag__image">' +
+      '<img src="assets/img/logo.png" width="24">' +
+      '</div>' +
+      '<div class="flag__body">' +
+      '<p>' +
+      json.result.fulfillment.speech +
+      '</p>' +
+      '</div>' +
+      '</div>';
 
     for (var i = 0; i < json.result.fulfillment.messages.length; i++) {
       var item = json.result.fulfillment.messages[i];
