@@ -1,0 +1,13 @@
+{
+  "name": "DialogflowBot",
+  "version": "1.0.0",
+  "description": "JS demo for Dialogflow bots",
+  "main": "index.html",
+  "repository": "github.com/rickbutterfield/DialogflowBot",
+  "author": "Rick Butterfield <rick.butterfield@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "normalize.css": "^7.0.0"
+  }
+}

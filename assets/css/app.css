@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  --brand-colour: #00b623;
+  --font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  font-family: var(--font-stack);
+}
+
+input {
+  width: 100%;
+  height: 50px;
+  padding: 1rem;
+  font-family: var(--font-stack);
+  border: 0;
+  border-top: 1px solid #ccc;
+}
+
+input:focus {
+  outline: 0;
+}
+
+header {
+  background-color: var(--brand-colour);
+  font-size: 0;
+  text-align: center;
+  padding: 10px 0;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  margin: 0 0.5rem 0.5rem 0;
+  padding: 0.5rem 1rem;
+  font-family: var(--font-stack);
+  background-color: transparent;
+  border: 1px solid var(--brand-colour);
+  border-radius: 20px;
+}
+
+.chat {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  width: 100vw;
+  height: calc(100vh - 50px - 60px);
+  background-color: #f1f1f1;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.response {
+  padding: 1rem;
+}
+.response p {
+  display: inline-block;
+  padding: 0.75rem 1rem;
+  background-color: #fff;
+  border-radius: 3px;
+}
+
+.response-user {
+  text-align: right;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+
+.response-bot {
+  text-align: left;
+}
+.response-bot p {
+  background-color: white;
+}
+
+.response-buttons {
+  margin-top: 0.5rem;
+}
