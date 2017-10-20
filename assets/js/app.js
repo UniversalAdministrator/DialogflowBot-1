@@ -22,35 +22,37 @@ $(document).ready(function() {
 
 function send() {
   var text = $('#input').val();
-  $('.chat').append(
-    '<div class="response response-user"><p>' + text + '</p></div>'
-  );
-  $('.response-bot')
-    .last()
-    .find('.response-buttons')
-    .slideUp();
-  $('#input').val('');
-  $.ajax({
-    type: 'POST',
-    url: baseUrl + 'query?v=20170910',
-    contentType: 'application/json; charset=utf-8',
-    dataType: 'json',
-    headers: {
-      Authorization: 'Bearer ' + accessToken
-    },
-    data: JSON.stringify({
-      query: text,
-      lang: 'en',
-      sessionId: 'somerandomthing'
-    }),
-    success: function(data) {
-      setResponse(JSON.stringify(data, undefined, 2));
-    },
-    error: function() {
-      setResponse('Internal Server Error');
-    }
-  });
-  setResponse('Loading...');
+  if (text !== '') {
+    $('.chat').prepend(
+      '<div class="response response-user"><p>' + text + '</p></div>'
+    );
+    $('.response-bot')
+      .last()
+      .find('.response-buttons')
+      .slideUp();
+    $('#input').val('');
+    $.ajax({
+      type: 'POST',
+      url: baseUrl + 'query?v=20170910',
+      contentType: 'application/json; charset=utf-8',
+      dataType: 'json',
+      headers: {
+        Authorization: 'Bearer ' + accessToken
+      },
+      data: JSON.stringify({
+        query: text,
+        lang: 'en',
+        sessionId: 'somerandomthing'
+      }),
+      success: function(data) {
+        setResponse(JSON.stringify(data, undefined, 2));
+      },
+      error: function() {
+        setResponse('Internal Server Error');
+      }
+    });
+    setResponse('Loading...');
+  }
 }
 function setResponse(val) {
   let json = JSON.parse(val);
@@ -87,6 +89,6 @@ function setResponse(val) {
     }
 
     html += '</div>';
-    $('.chat').append(html);
+    $('.chat').prepend(html);
   }
 }

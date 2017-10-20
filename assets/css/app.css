@@ -19,7 +19,15 @@ body {
   flex-direction: column;
   width: 100vw;
   height: 100vh;
+  line-height: 1.5;
   font-family: var(--font-stack);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
 }
 
 input {
@@ -36,10 +44,21 @@ input:focus {
 }
 
 header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
   background-color: var(--brand-colour);
   font-size: 0;
   text-align: center;
   padding: 10px 0;
+}
+
+footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 p {
@@ -97,21 +116,16 @@ button:focus {
 }
 
 .chat {
-  display: -webkit-box;
-  display: -ms-flexbox;
+  flex: 1 1 auto;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
+  flex-direction: column-reverse;
   width: 100vw;
-  height: calc(100vh - 50px - 60px);
+  height: 100vh;
   background-color: #f1f1f1;
   overflow-x: hidden;
   overflow-y: auto;
+  margin-top: 60px;
+  margin-bottom: 50px;
 }
 
 .response {
