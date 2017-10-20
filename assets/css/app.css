@@ -7,6 +7,8 @@ html {
   --font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial,
     sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  overflow: hidden;
+  -webkit-overflow-scrolling: auto;
 }
 
 body {
@@ -127,6 +129,7 @@ button:focus {
   background-color: #f1f1f1;
   overflow-x: hidden;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   margin-top: 60px;
   margin-bottom: 50px;
 }
