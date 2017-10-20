@@ -2,9 +2,12 @@ var accessToken = 'bad6bc0b4d4f430ca10e48e91c9391d8';
 var baseUrl = 'https://api.api.ai/v1/';
 $(document).ready(function() {
   $('form').on('submit', function(e) {
+    alert('submit');
     e.preventDefault();
   });
   $('#input').on('keypress', function(event) {
+    alert(event.which);
+    alert(event.keyCode);
     if (event.which == 13 || event.keyCode == 13) {
       event.preventDefault();
       send();
