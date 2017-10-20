@@ -38,6 +38,8 @@ input {
   border: 0;
   border-top: 1px solid #ccc;
   -webkit-appearance: none;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 input:focus {
