@@ -2,7 +2,6 @@ var accessToken = 'bad6bc0b4d4f430ca10e48e91c9391d8';
 var baseUrl = 'https://api.api.ai/v1/';
 $(document).ready(function() {
   $('form').on('submit', function(e) {
-    alert('submit');
     e.preventDefault();
     return false;
   });
@@ -16,6 +15,14 @@ $(document).ready(function() {
 
   $('#rec').on('click', function(event) {
     switchRecognition();
+  });
+
+  $('#photo').on('click', function() {
+    $('input#camera').trigger('click');
+  });
+
+  $('input#camera').on('change', function(e) {
+    e.preventDefault();
   });
 
   $(document).on('click', 'button', function(e) {

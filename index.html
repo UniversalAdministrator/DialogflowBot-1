@@ -14,6 +14,7 @@
   <title>TDbot</title>
   <link rel="manifest" href="/manifest.json">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="assets/css/app.css">
   <link rel="shortcut icon" href="assets/img/logo.png">
   <link rel="apple-touch-icon" href="assets/img/logo.png">
@@ -103,8 +104,13 @@
   <footer>
     <form action="post" method="POST">
       <input id="input" type="text" placeholder="Ask something...">
+      <button id="photo">
+        <i class="fa fa-camera" aria-label="Camera"></i>
+      </button>
     </form>
   </footer>
+
+  <input type="file" id="camera" accept="image/*" capture="camera">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="assets/js/app.js"></script>
