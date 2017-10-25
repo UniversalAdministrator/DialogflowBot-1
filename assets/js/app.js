@@ -1,11 +1,11 @@
 var accessToken = 'bad6bc0b4d4f430ca10e48e91c9391d8';
 var baseUrl = 'https://api.api.ai/v1/';
-$(document).ready(function() {
-  $('form').on('submit', function(e) {
+$(document).ready(function () {
+  $('form').on('submit', function (e) {
     e.preventDefault();
     return false;
   });
-  $('#input').on('keypress', function(event) {
+  $('#input').on('keypress', function (event) {
     if (event.which == 13 || event.keyCode == 13) {
       event.preventDefault();
       send();
@@ -13,25 +13,61 @@ $(document).ready(function() {
     }
   });
 
-  $('#rec').on('click', function(event) {
+  $('#rec').on('click', function (event) {
     switchRecognition();
   });
 
-  $('#photo').on('click', function() {
+  $('#photo').on('click', function () {
     $('input#camera').trigger('click');
   });
 
-  $('input#camera').on('change', function(e) {
+  $('input#camera').on('change', function (e) {
     e.preventDefault();
+    if (this.files.length !== 0) {
+      var file = this.files[0];
+      var src = URL.createObjectURL(file);
+      var img = document.createElement('img');
+      var blob = null;
+
+      img.src = src;
+
+      $('.chat').prepend(
+        '<div class="response response-user"><p class="img">' +
+        '<img src="' + src + '">' +
+        '</p></div>'
+      );
+
+      $.ajax({
+        type: 'POST',
+        url: baseUrl + 'query?v=20170910',
+        contentType: 'application/json; charset=utf-8',
+        dataType: 'json',
+        headers: {
+          Authorization: 'Bearer ' + accessToken
+        },
+        data: JSON.stringify({
+          query: 'photo',
+          lang: 'en',
+          sessionId: 'somerandomthing'
+        }),
+        success: function (data) {
+          setResponse(JSON.stringify(data, undefined, 2));
+        },
+        error: function () {
+          setResponse('Internal Server Error');
+        }
+      });
+      setResponse('Loading...');
+    }
   });
 
-  $(document).on('click', 'button', function(e) {
+  $(document).on('click', 'button', function (e) {
     var self = this;
     $(self)
       .closest('.response-buttons')
       .fadeUp(200);
 
-    setTimeout(function() {
+    setTimeout(function () {
       $('#input').val(self.innerText);
       send();
     }, 500);
@@ -69,16 +105,17 @@ function send() {
         lang: 'en',
         sessionId: 'somerandomthing'
       }),
-      success: function(data) {
+      success: function (data) {
         setResponse(JSON.stringify(data, undefined, 2));
       },
-      error: function() {
+      error: function () {
         setResponse('Internal Server Error');
       }
     });
     setResponse('Loading...');
   }
 }
+
 function setResponse(val) {
   if (val.indexOf('{') === 0) {
     var json = JSON.parse(val);
@@ -114,14 +151,14 @@ function setResponse(val) {
       }
 
       html += '</div>';
-      setTimeout(function() {
+      setTimeout(function () {
         $('.chat').prepend(html);
       }, 500);
     }
   }
 }
 
-var getAnimOpts = function(a, b, c) {
+var getAnimOpts = function (a, b, c) {
   if (!a) {
     return {
       duration: 'normal'
@@ -148,7 +185,7 @@ var getAnimOpts = function(a, b, c) {
   };
 };
 
-var getUnqueuedOpts = function(opts) {
+var getUnqueuedOpts = function (opts) {
   return {
     queue: false,
     duration: opts.duration,
@@ -157,7 +194,7 @@ var getUnqueuedOpts = function(opts) {
 };
 
 //Add fadeDown animation
-$.fn.fadeDown = function(a, b, c) {
+$.fn.fadeDown = function (a, b, c) {
   var slideOpts = getAnimOpts(a, b, c),
     fadeOpts = getUnqueuedOpts(slideOpts);
   $(this)
@@ -168,7 +205,7 @@ $.fn.fadeDown = function(a, b, c) {
 };
 
 //Add fadeUp animation
-$.fn.fadeUp = function(a, b, c) {
+$.fn.fadeUp = function (a, b, c) {
   var slideOpts = getAnimOpts(a, b, c),
     fadeOpts = getUnqueuedOpts(slideOpts);
   $(this)

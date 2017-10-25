@@ -34,7 +34,7 @@ main {
   width: 100vw;
   height: 100vh;
   padding-top: 60px;
-  padding-bottom: 50px;
+  /* padding-bottom: 50px; */
 }
 
 input {
@@ -159,6 +159,16 @@ button:focus {
   background-color: #fff;
   border-radius: 3px;
   font-size: 15px;
+}
+
+.response p.img {
+  padding: 0;
+  overflow: hidden;
+  font-size: 0;
+}
+
+.response p.img img {
+  max-width: 250px;
 }
 
 .response-user {
