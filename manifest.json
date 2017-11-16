@@ -1,6 +1,6 @@
 {
-  "name": "TD Bank",
-  "short_name": "TD Bank",
+  "name": "Shout Bank",
+  "short_name": "Shout Bank",
   "icons": [
     {
       "src": "assets/img/logo.png",
@@ -26,10 +26,15 @@
       "src": "assets/img/logo.png",
       "sizes": "256x256",
       "type": "image/png"
+    },
+    {
+      "src": "assets/img/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ],
   "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "#00b623",
-  "theme_color": "#00b623"
+  "background_color": "#9f1833",
+  "theme_color": "#9f1833"
 }

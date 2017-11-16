@@ -23,7 +23,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial,
     sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-  background-color: #f1f1f1;
+  background-color: #F5F5F5;
   overflow: hidden;
   -webkit-overflow-scrolling: auto;
 }
@@ -60,7 +60,7 @@ header {
   top: 0;
   right: 0;
   left: 0;
-  background-color: #00b623;
+  background-color: #9f1833;
   font-size: 0;
   text-align: center;
   padding: 10px 0;
@@ -85,7 +85,7 @@ button {
     Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial,
     sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   background-color: transparent;
-  border: 1px solid #00b623;
+  border: 1px solid #9f1833;
   border-radius: 20px;
   font-size: 15px;
 }
@@ -159,6 +159,7 @@ button:focus {
   background-color: #fff;
   border-radius: 3px;
   font-size: 15px;
+  box-shadow: 0 0 6px 0px rgba(0, 0, 0, 0.15);
 }
 
 .response p.img {
@@ -181,7 +182,7 @@ button:focus {
   text-align: left;
 }
 .response-bot p {
-  background-color: #0e3e26;
+  background-color: #9f1833;
   color: #fff;
 }
 
