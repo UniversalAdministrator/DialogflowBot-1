@@ -30,7 +30,7 @@ body {
 
 main {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   width: 100vw;
   height: 100vh;
   padding-top: 60px;
